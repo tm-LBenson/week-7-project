@@ -1,11 +1,14 @@
-
 import "./App.css";
+import Header from "./components/Header";
+import TicketList from "./components/TicketList";
 
 function App() {
-
   return (
     <>
-      <div>APP</div>
+      <Header />
+      <main>
+        <TicketList />
+      </main>
     </>
   );
 }

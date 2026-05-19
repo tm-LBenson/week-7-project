@@ -1,0 +1,13 @@
+.bold {
+  font-weight: 700;
+}
+
+
+.card {
+  box-shadow: 4px 4px 4px black;
+  background-color: antiquewhite;
+  max-width: 300px;
+  margin: auto;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
