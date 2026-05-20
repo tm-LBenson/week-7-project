@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { ticketsData } from "../data/tickets";
+
 import TicketCard from "./TicketCard";
 import styles from "./TicketList.module.css";
+import { supabase } from "../supabase";
 
 export default function TicketList() {
   const [tickets, setTickets] = useState([]);
   useEffect(() => {
-    setTickets(ticketsData);
+    async function getTickets() {
+      const { data } = await supabase.from("tickets").select("*");
+      setTickets(data);
+    }
+    getTickets();
   }, []);
-  console.log(tickets);
   return (
     <div>
       <h2 className={styles.center}>Tickets</h2>
