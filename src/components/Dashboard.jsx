@@ -15,8 +15,13 @@ function Dashboard() {
     getTickets();
   }, []);
 
+  async function handleSignOut() {
+    await supabase.auth.signOut();
+  }
+
   return (
     <div>
+      <button onClick={handleSignOut}>Sign Out</button>
       <TicketForm onCreateNewTicket={getTickets} />
       <TicketList tickets={tickets} />
     </div>
