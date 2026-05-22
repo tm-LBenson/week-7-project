@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../supabase";
-
+import "./TicketForm.css"
+import  {Button}  from 'react-bootstrap/Button';
 function TicketForm({ onCreateNewTicket }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -17,7 +18,7 @@ function TicketForm({ onCreateNewTicket }) {
       status: "Open",
     };
     await supabase.from("tickets").insert(newTicket);
-  
+
     setTitle("");
     setDescription("");
     setPriority("");
@@ -26,7 +27,7 @@ function TicketForm({ onCreateNewTicket }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit}>
       <label>
         Title
         <input
@@ -71,7 +72,8 @@ function TicketForm({ onCreateNewTicket }) {
           <option value="Devices">Devices</option>
         </select>
       </label>
-      <button>Add Ticket</button>
+
+      <Button>Add Ticket</Button>
     </form>
   );
 }

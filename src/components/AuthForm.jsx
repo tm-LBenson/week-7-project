@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { supabase } from "../supabase";
+import Button from "react-bootstrap/Button";
 
 export default function AuthForm() {
   const [email, setEmail] = useState("");
@@ -9,7 +10,7 @@ export default function AuthForm() {
     e.preventDefault();
     setMessage("");
     const { error } = await supabase.auth.signInWithPassword({ email, password });
-  
+
     if (error) {
       setMessage(error.message);
       return
@@ -46,8 +47,8 @@ export default function AuthForm() {
           id="password"
         />
 
-        <button onClick={handleSignIn}>Sign In</button>
-        <button onClick={handleSignUp}>Sign Up</button>
+        <Button onClick={handleSignIn}>Sign In</Button>
+        <Button onClick={handleSignUp}>Sign Up</Button>
       </form>
       {message && <p>{message}</p>}
     </>

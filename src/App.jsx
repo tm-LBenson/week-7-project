@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import Splash from "./components/Splash";
 import { useEffect, useState } from "react";
 import { supabase } from "./supabase";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
   const [session, setSession] = useState(null);
