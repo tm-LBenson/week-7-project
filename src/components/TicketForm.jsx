@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../supabase";
 import "./TicketForm.css"
-import  {Button}  from 'react-bootstrap/Button';
+import  Button from 'react-bootstrap/Button';
 function TicketForm({ onCreateNewTicket }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
